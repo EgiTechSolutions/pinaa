@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perasaan Hatiku</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2); /* Gradien ungu biru romantis */
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff; }
+            to { text-shadow: 0 0 20px #ff69b4; }
+        }
+        button {
+            background: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff1493;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px auto;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1s ease-in-out;
+        }
+        p.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            animation: confettiFall 3s linear infinite;
+        }
+        @keyframes confettiFall {
+            from { top: -10px; transform: rotate(0deg); }
+            to { top: 100vh; transform: rotate(360deg); }
+        }
+        audio {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Untuk Lawan Jenisku yang Spesial</h1>
+    <button onclick="revealMessage()">Ungkap Perasaan</button>
+    <p id="message">
+        hello hello orangg paforit kuu yang manisss, how are u Wednesday ? andai aku bisa memberitahu kamu betapa aku mencintai kamu, aku akan selalu mencintaimu. aku benar - benar mencintai kamu, i like you😉, harii ini akuu ingin mengatakan sesuatu untuk kamu🤍🤍 sebenarnya ini udah lama ingin aku kata kan cuman aku nunggu waktu yg tepat dan sekarang hari ini waktu yg tepat untuk aku ungkapkan hehehe🤭 I like you , do you want to be my girlfriend?😊 
+kalo mau "🤍" kalo ga "💔"
+semoga di terima yaa cantikk 🌷🩷  dan i'm so lucky to have u, and i'll keep choosing u, always 🤍 </p>
+    
+    <!-- Musik latar (opsional) -->
+    <audio controls autoplay loop>
+        <source src="./musik.mp3" type="audio/mp4"> <!-- Contoh URL, ganti dengan lagu romantis -->
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        function revealMessage() {
+            const message = document.getElementById('message');
+            message.classList.add('show');
+            
+            // Tambah efek confetti unik
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(confetti);
+                
+                // Hapus confetti setelah animasi
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+    </script>
+</body>
+</html>
